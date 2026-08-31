@@ -1,0 +1,17 @@
+[project]
+name = "npu-compute"
+version = "0.1.0"
+description = "A collection of experiments with using the Intel Neural Processing Unit as a coprocessor for non-AI workloads"
+readme = "README.md"
+authors = [
+    { name = "lbroglio", email = "lukebroglio@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+npu-compute = "npu_compute:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
