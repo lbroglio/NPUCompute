@@ -1,0 +1,17 @@
+[project]
+name = "matrix-mult"
+version = "0.1.0"
+description = "A simple matrix multiplication implementation done on the NPU."
+readme = "README.md"
+authors = [
+    { name = "lbroglio", email = "lukebroglio@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+matrix-mult = "matrix_mult:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
