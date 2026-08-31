@@ -1,5 +1,5 @@
 # OS Files
 .DS_Store
 
-# Venv
+# Python Virtual Environments
 .venv
