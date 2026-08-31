@@ -10,6 +10,6 @@ package = false
 
 [tool.uv.workspace]
 members = [
-    "common-io",
+    "common-util",
     "matrix-mult"
 ]

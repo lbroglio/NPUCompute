@@ -4,15 +4,15 @@ requires-python = ">=3.14"
 
 [manifest]
 members = [
-    "common-io",
+    "common-util",
     "matrix-mult",
     "npu-compute",
 ]
 
 [[package]]
-name = "common-io"
+name = "common-util"
 version = "0.1.0"
-source = { editable = "common-io" }
+source = { editable = "common-util" }
 
 [[package]]
 name = "cuda-bindings"
@@ -150,14 +150,14 @@ name = "matrix-mult"
 version = "0.1.0"
 source = { editable = "matrix-mult" }
 dependencies = [
-    { name = "common-io" },
+    { name = "common-util" },
     { name = "openvino" },
     { name = "torch" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "common-io", editable = "common-io" },
+    { name = "common-util", editable = "common-util" },
     { name = "openvino", specifier = ">=2026.3.1" },
     { name = "torch", specifier = ">=2.13.0" },
 ]
