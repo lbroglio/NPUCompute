@@ -1,0 +1,15 @@
+[project]
+name = "npu-compute"
+version = "0.1.0"
+description = "Experiments with using the Intel Neural Processing Unit as a coprocessor for non-AI workloads."
+requires-python = ">=3.14"
+dependencies = [] 
+
+[tool.uv]
+package = false 
+
+[tool.uv.workspace]
+members = [
+    "common-io",
+    "matrix-mult"
+]
