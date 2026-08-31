@@ -7,6 +7,7 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "common-io",
     "openvino>=2026.3.1",
     "torch>=2.13.0",
 ]
@@ -17,3 +18,6 @@ matrix-mult = "matrix_mult:main"
 [build-system]
 requires = ["uv_build>=0.12.7,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.sources]
+common-io = { workspace = true }
