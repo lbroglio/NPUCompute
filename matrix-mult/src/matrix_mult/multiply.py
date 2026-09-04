@@ -25,11 +25,6 @@ def multiply_matrices(matrix_a: list[list[float]], matrix_b: list[list[float]]) 
         ValueError: If the number of columns in matrix_a does not equal the number of rows in matrix_b.
     """
 
-    # Validate inputs 
-    if len(matrix_a[0]) != len(matrix_b):
-        raise ValueError("Number of columns in matrix_a must equal number of rows in matrix_b for multiplication.")
-
-    # Set inputs as a PyTorch model
     model = MatrixMultiplier(torch.tensor(matrix_b))
 
     # Convert the PyTorch model to OpenVINO format
@@ -47,5 +42,7 @@ def multiply_matrices(matrix_a: list[list[float]], matrix_b: list[list[float]]) 
         ov_model,
         "NPU"
     )
-    
 
+    result = compiled_model(input_tensor.numpy())
+    
+    return result.tolist()

@@ -29,3 +29,15 @@ def matrix_out(matrix: list[list[float]], filepath: str) -> None:
         for row in matrix:
             line = ' '.join(str(num) for num in row)
             file.write(line + '\n')
+
+def print_matrix(matrix: list[list[float]]) -> None:
+    """
+    Prints a matrix to the console.
+
+    Args:
+        matrix (list[list[float]]): The matrix to print.
+    """
+
+    for row in matrix:
+        row_str = ' '.join(str(num) for num in row)
+        print('| ' + row_str + ' |')
