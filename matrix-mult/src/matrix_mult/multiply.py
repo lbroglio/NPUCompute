@@ -36,6 +36,8 @@ def multiply_matrices(matrix_a: list[list[float]], matrix_b: list[list[float]]) 
         example_input=input_tensor
     )
 
+    ov_model = ov_model.reshape([input_tensor.shape[0], input_tensor.shape[1], matrix_b.shape[1]])
+
     core = ov.Core()
 
     compiled_model = core.compile_model(
