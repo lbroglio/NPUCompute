@@ -1,5 +1,6 @@
 import torch
 import openvino as ov
+from common_util import build_ov_model, get_ov_result_as_list
 
 # A dummy PyTorch model that performs matrix multiplication
 class MatrixMultiplier(torch.nn.Module):
@@ -27,27 +28,15 @@ def multiply_matrices(matrix_a: list[list[float]], matrix_b: list[list[float]]) 
 
     model = MatrixMultiplier(torch.tensor(matrix_b))
 
-    # Convert the PyTorch model to OpenVINO format
-    model.eval()
-    input_tensor = torch.tensor(matrix_a, dtype=torch.float32)
-
-    ov_model = ov.convert_model(
-        model,
-        example_input=input_tensor
-    )
-
     rows_a = len(matrix_a)
     cols_a = len(matrix_a[0]) if matrix_a else 0
-    ov_model.reshape({ov_model.inputs[0]: [rows_a, cols_a]})
+    input_shape = [rows_a, cols_a]
 
-    core = ov.Core()
+    input_tensor = torch.tensor(matrix_a, dtype=torch.float32)
 
-    compiled_model = core.compile_model(
-        ov_model,
-        "NPU"
-    )
+    # Build compiled OpenVINO model
+    compiled_model = build_ov_model(model, input_tensor, input_shape)
 
     result = compiled_model(input_tensor.numpy())
-    arr = next(iter(result.values()))
 
-    return arr.tolist()
+    return get_ov_result_as_list(result)

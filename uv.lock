@@ -13,6 +13,16 @@ members = [
 name = "common-util"
 version = "0.1.0"
 source = { editable = "common-util" }
+dependencies = [
+    { name = "openvino" },
+    { name = "torch" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "openvino", specifier = ">=2026.3.1" },
+    { name = "torch", specifier = ">=2.13.0" },
+]
 
 [[package]]
 name = "cuda-bindings"
