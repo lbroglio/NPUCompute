@@ -24,7 +24,7 @@ def multiply_matrices(matrix_a: list[list[float]], matrix_b: list[list[float]]) 
     Raises:
         ValueError: If the number of columns in matrix_a does not equal the number of rows in matrix_b.
     """
-    
+
     model = MatrixMultiplier(torch.tensor(matrix_b))
 
     # Convert the PyTorch model to OpenVINO format
@@ -38,7 +38,7 @@ def multiply_matrices(matrix_a: list[list[float]], matrix_b: list[list[float]]) 
 
     rows_a = len(matrix_a)
     cols_a = len(matrix_a[0]) if matrix_a else 0
-    ov_model = ov_model.reshape({ov_model.inputs[0]: [rows_a, cols_a]})
+    ov_model.reshape({ov_model.inputs[0]: [rows_a, cols_a]})
 
     core = ov.Core()
 
