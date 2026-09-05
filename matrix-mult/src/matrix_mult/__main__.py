@@ -58,8 +58,8 @@ def main() -> None:
     if args.output_file is not None:
         matrix_out(result, args.output_file)
 
-    if not args.silent:
-        print(f"Result saved to {args.output_file}")
+        if not args.silent:
+            print(f"Result saved to {args.output_file}")
 
 
 main()
