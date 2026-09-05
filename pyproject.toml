@@ -11,5 +11,6 @@ package = false
 [tool.uv.workspace]
 members = [
     "common-util",
-    "matrix-mult"
+    "matrix-mult",
+    "input-generator",
 ]

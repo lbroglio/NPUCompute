@@ -5,6 +5,7 @@ requires-python = ">=3.14"
 [manifest]
 members = [
     "common-util",
+    "input-generator",
     "matrix-mult",
     "npu-compute",
 ]
@@ -112,6 +113,17 @@ sdist = { url = "https://files.pythonhosted.org/packages/00/78/f34251dadb8f39212
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fd/3c/6a2bf344106328fd04963664a60b9bb6496fc25df8e962fcdc1367285fb9/fsspec-2026.7.0-py3-none-any.whl", hash = "sha256:b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279", size = 206583, upload-time = "2026-07-28T16:34:49.538Z" },
 ]
+
+[[package]]
+name = "input-generator"
+version = "0.1.0"
+source = { editable = "input-generator" }
+dependencies = [
+    { name = "common-util" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "common-util", editable = "common-util" }]
 
 [[package]]
 name = "jinja2"
