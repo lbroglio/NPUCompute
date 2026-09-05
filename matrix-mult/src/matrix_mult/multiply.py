@@ -50,8 +50,4 @@ def multiply_matrices(matrix_a: list[list[float]], matrix_b: list[list[float]]) 
     result = compiled_model(input_tensor.numpy())
     arr = next(iter(result.values()))
 
-
-    print(arr)
-    print(arr.tolist())
-
-    #return list(result_dict.values())
+    return arr.tolist()
