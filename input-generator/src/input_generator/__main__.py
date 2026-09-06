@@ -45,12 +45,6 @@ def setup_args():
         default="matrix.txt",
         help="Output file to save the generated matrix."
     )
-    matrix_parser.add_argument(
-        "--decimal-places",
-        type=int,
-        default=2,
-        help="Number of decimal places to round the random floats in the matrix."
-    )
 
 
     return parser.parse_args()
@@ -67,9 +61,8 @@ def main():
 
         if args.verbose:
             print(f"Generating a {args.rows}x{args.cols} matrix with values between {args.value_min} and {args.value_max}.")
-            print(f"Rounding values to {args.decimal_places} decimal places.")
 
-        matrix = generate_matrix(args.rows, args.cols, args.value_min, args.value_max, round_to=args.decimal_places)
+        matrix = generate_matrix(args.rows, args.cols, args.value_min, args.value_max)
 
         if args.verbose:
             print("Generated Matrix:")
