@@ -35,7 +35,7 @@ def setup_args():
     matrix_parser.add_argument(
         "--value-max",
         type=float,
-        default=10,
+        default=50,
         help="Maximum value for the random floats in the matrix."
     )
     matrix_parser.add_argument(

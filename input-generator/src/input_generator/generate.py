@@ -1,6 +1,6 @@
 import random
 
-def generate_matrix(rows: int, cols: int, value_min: float = 0, value_max: float = 10, round_to: int = 2) -> list:
+def generate_matrix(rows: int, cols: int, value_min: float = 0, value_max: float = 50, round_to: int = 2) -> list:
     """
     Generates a matrix with the specified number of rows and columns and 
     fills it with random float values between value_min and value_max.
@@ -9,7 +9,7 @@ def generate_matrix(rows: int, cols: int, value_min: float = 0, value_max: float
         rows (int): The number of rows in the matrix.
         cols (int): The number of columns in the matrix.
         value_min (float): The minimum value for the random floats. Default is 0.
-        value_max (float): The maximum value for the random floats. Default is 1000
+        value_max (float): The maximum value for the random floats. Default is 50
 
     Returns:
         list: A 2D list representing the generated matrix.
